@@ -14,14 +14,17 @@ export type WorkItem = {
   colors: [string, string];  // gradient shown until a poster/video is added
 };
 
-// Placeholder projects: add a `video` link to each one to make it playable.
+// Placeholder titles: rename them as needed. Each project plays a file from /public/videos.
 const items: WorkItem[] = [
-  { id: 'p1', title: 'Untitled short film', category: 'films', label: 'Short film', colors: ['#6D3BD2', '#B79CF5'] },
-  { id: 'p2', title: 'Brand film', category: 'ads', label: 'Commercial', colors: ['#8B5CF6', '#D9CCF6'] },
-  { id: 'p3', title: 'Travel reel', category: 'reels', label: 'Reel', ratio: '9/16', colors: ['#3B1A85', '#8B5CF6'] },
-  { id: 'p4', title: 'Wedding highlights', category: 'events', label: 'Event', colors: ['#A07CF2', '#E2D8F6'] },
-  { id: 'p5', title: 'Music video', category: 'films', label: 'Short film', colors: ['#5B2BB8', '#C7AEF8'] },
-  { id: 'p6', title: 'Product launch', category: 'ads', label: 'Commercial', colors: ['#7C4DE0', '#D9CCF6'] },
+  { id: 'p1', title: 'Untitled short film', category: 'films', label: 'Short film', video: '/videos/copy_02D6E417-A7AB-4E61-9ED3-CF07A5572F08.mp4', poster: '/images/copy_02D6E417-A7AB-4E61-9ED3-CF07A5572F08.jpg', colors: ['#6D3BD2', '#B79CF5'] },
+  { id: 'p2', title: 'Brand film', category: 'ads', label: 'Commercial', video: '/videos/copy_36B41C65-6781-4A92-A577-021668395B2D.mp4', poster: '/images/copy_36B41C65-6781-4A92-A577-021668395B2D.jpg', ratio: '3/4', colors: ['#8B5CF6', '#D9CCF6'] },
+  { id: 'p3', title: 'Travel reel', category: 'reels', label: 'Reel', video: '/videos/copy_3D1826E0-C0EE-4942-91E4-090243FCA61B.mp4', poster: '/images/copy_3D1826E0-C0EE-4942-91E4-090243FCA61B.jpg', ratio: '9/16', colors: ['#3B1A85', '#8B5CF6'] },
+  { id: 'p4', title: 'Wedding highlights', category: 'events', label: 'Event', video: '/videos/copy_63036307-4FF6-419A-B6EC-6DFA4815D015.mp4', poster: '/images/copy_63036307-4FF6-419A-B6EC-6DFA4815D015.jpg', ratio: '9/16', colors: ['#A07CF2', '#E2D8F6'] },
+  { id: 'p5', title: 'Music video', category: 'films', label: 'Short film', video: '/videos/copy_6E3E93D9-DAB2-4DA5-A081-0ED347E96276.mp4', poster: '/images/copy_6E3E93D9-DAB2-4DA5-A081-0ED347E96276.jpg', ratio: '9/16', colors: ['#5B2BB8', '#C7AEF8'] },
+  { id: 'p6', title: 'Product launch', category: 'ads', label: 'Commercial', video: '/videos/copy_6EF48814-9276-4B4F-A401-3497662089FB.mp4', poster: '/images/copy_6EF48814-9276-4B4F-A401-3497662089FB.jpg', ratio: '9/16', colors: ['#7C4DE0', '#D9CCF6'] },
+  { id: 'p7', title: 'Behind the scenes', category: 'events', label: 'Event', video: '/videos/copy_97E162EE-9BE8-43D9-B81F-FEFCBC79C5CA.mp4', poster: '/images/copy_97E162EE-9BE8-43D9-B81F-FEFCBC79C5CA.jpg', ratio: '9/16', colors: ['#6D3BD2', '#D9CCF6'] },
+  { id: 'p8', title: 'Cinematic b-roll', category: 'films', label: 'Short film', video: '/videos/copy_A4C23772-BB87-45D0-A432-2E140AED0D57.mp4', poster: '/images/copy_A4C23772-BB87-45D0-A432-2E140AED0D57.jpg', ratio: '9/16', colors: ['#8B5CF6', '#E2D8F6'] },
+  { id: 'p9', title: 'Social reel', category: 'reels', label: 'Reel', video: '/videos/copy_A62B0B78-7593-4602-9906-3C3078253A8E.mp4', poster: '/images/copy_A62B0B78-7593-4602-9906-3C3078253A8E.jpg', ratio: '9/16', colors: ['#5B2BB8', '#B79CF5'] },
 ];
 
 export const site = {
