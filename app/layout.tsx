@@ -7,7 +7,7 @@ import './globals.css';
 
 const display = Bricolage_Grotesque({ subsets: ['latin'], weight: ['500', '800'], variable: '--font-d', display: 'swap' });
 const heavy = Anton({ subsets: ['latin'], weight: '400', variable: '--font-h', display: 'swap' });
-const body = Instrument_Sans({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-b', display: 'swap' });
+const body = Instrument_Sans({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-b', display: 'swap' });
 
 export const metadata: Metadata = {
   title: site.meta.title,

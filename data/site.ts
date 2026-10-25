@@ -30,10 +30,10 @@ const items: WorkItem[] = [
 export const site = {
   name: 'Manish',
   role: 'Cinematographer & video editor',
-  tagline: 'Stories shot on iPhone 17 and a mirrorless camera, cut and graded in DaVinci Resolve and CapCut.',
+  tagline: 'Stories shot on mobile and a mirrorless camera, cut and graded in DaVinci Resolve and CapCut.',
   meta: {
     title: 'Manish – Cinematographer & Video Editor',
-    description: 'Portfolio of Manish, a cinematographer and video editor shooting on iPhone 17 and mirrorless, editing in DaVinci Resolve and CapCut.',
+    description: 'Portfolio of Manish, a cinematographer and video editor shooting on mobile and mirrorless, editing in DaVinci Resolve and CapCut.',
   },
   availability: 'Open for new projects',
 
@@ -51,7 +51,7 @@ export const site = {
   hero: {
     eyebrow: 'Stories shot, cut and graded',
     lines: ['Visual', 'Storyteller'],   // the big headline, one entry per line
-    text: 'Cinematographer and video editor shooting on iPhone 17 and mirrorless, cutting and grading in DaVinci Resolve and CapCut.',
+    text: 'Cinematographer and video editor shooting on mobile and mirrorless, cutting and grading in DaVinci Resolve and CapCut.',
     image: '/images/manish-hero.jpg',
     side: { top: 'Available for', big: 'Freelance', link: { label: 'Projects', href: '#contact' } },
     hud: '4K · 24 fps · ISO 800',
@@ -78,7 +78,7 @@ export const site = {
   about: {
     title: 'I shoot it, then I cut it.',
     body: [
-      'Hi, I’m Manish, a cinematographer and video editor. I shoot on iPhone 17 and a mirrorless camera, and cut everything in DaVinci Resolve and CapCut.',
+      'Hi, I’m Manish, a cinematographer and video editor. I shoot on mobile and a mirrorless camera, and cut everything in DaVinci Resolve and CapCut.',
       'From the first frame to the final export, I take care of the whole process so the look you plan on set is the look that reaches the screen.',
     ],
     image: '', // e.g. '/images/manish.jpg' (file in /public/images)
@@ -88,7 +88,7 @@ export const site = {
   gear: {
     title: 'Gear and software',
     items: [
-      { icon: '📱', name: 'iPhone 17', text: 'Fast and pocketable for b-roll, vertical reels and moments that won’t wait for a setup.' },
+      { icon: '📱', name: 'Mobile shoot', text: 'Fast and pocketable for b-roll, vertical reels and moments that won’t wait for a setup.' },
       { icon: '📷', name: 'Mirrorless camera', text: 'The main camera for cinematic, shallow-depth shots with full control over lenses and exposure.' },
       { icon: '🎞️', name: 'DaVinci Resolve', text: 'Editing, colour grading and the final finish for films, commercials and long-form work.' },
       { icon: '✂️', name: 'CapCut', text: 'Quick social cuts with captions, effects and trending formats for short-form platforms.' },
@@ -115,6 +115,6 @@ export const site = {
     actionTitle: 'Got a project in mind?',
     actionText: 'Send an email or drop a message on Instagram.',
     emailLabel: 'Email me',
-    credit: 'Shot on iPhone 17 and a mirrorless camera. Cut in DaVinci Resolve and CapCut.',
+    credit: 'Shot on mobile and a mirrorless camera. Cut in DaVinci Resolve and CapCut.',
   },
 };
