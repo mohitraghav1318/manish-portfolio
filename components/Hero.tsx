@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { site } from '@/data/site';
 import HeroMotion from './HeroMotion';
 
@@ -20,7 +21,7 @@ export default function Hero() {
         </h1>
         <p className="hx-p" aria-label={hero.text}>
           {hero.text.split(' ').map((w, i) => (
-            <span className="w" key={i} aria-hidden="true"><span data-hx="word">{w}</span>{' '}</span>
+            <Fragment key={i}><span className="w" aria-hidden="true"><span data-hx="word">{w}</span></span>{' '}</Fragment>
           ))}
         </p>
         <div className="hx-cta" data-hx="fade">

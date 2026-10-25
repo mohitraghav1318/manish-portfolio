@@ -15,7 +15,7 @@ export default function About() {
         {a.image ? (
           <img className="portrait" src={a.image} alt={site.name} />
         ) : (
-          <div className="thumb ph" style={{ '--a': '#8B5CF6', '--b': '#D9CCF6', aspectRatio: '4/5', borderRadius: 6 } as CSSProperties}>
+          <div className="thumb ph" style={{ '--a': '#1F1F24', '--b': '#55555E', aspectRatio: '4/5', borderRadius: 6 } as CSSProperties}>
             <span className="play">📷</span>
           </div>
         )}
