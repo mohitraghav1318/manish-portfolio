@@ -49,6 +49,11 @@ export const site = {
   navCta: { label: 'Let’s talk', href: '#contact' },
 
   hero: {
+    eyebrow: 'Stories shot, cut and graded',
+    lines: ['Visual', 'Storyteller'],   // the big headline, one entry per line
+    text: 'Cinematographer and video editor shooting on iPhone 17 and mirrorless, cutting and grading in DaVinci Resolve and CapCut.',
+    image: '/images/manish-hero.jpg',
+    side: { top: 'Available for', big: 'Freelance', link: { label: 'Projects', href: '#contact' } },
     hud: '4K · 24 fps · ISO 800',
     reel: 'Showreel',
     primary: { label: 'See the work', href: '#work' },

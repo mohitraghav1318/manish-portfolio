@@ -1,41 +1,40 @@
-import type { CSSProperties } from 'react';
 import { site } from '@/data/site';
-import Timecode from './Timecode';
+import HeroMotion from './HeroMotion';
 
 export default function Hero() {
-  const { name, role, tagline, hero } = site;
-  const ring = Array(3).fill(`${hero.reel} ✦ `).join('');
+  const { hero } = site;
   return (
-    <header className="hero" id="top">
-      <div className="blob b1" /><div className="blob b2" /><div className="blob b3" />
-      <div className="vf"><i /><i /><i /><i /></div>
-      <div className="hud">
-        <span className="rec">REC <Timecode /></span>
-        <span>{hero.hud}</span>
+    <header className="hx" id="top">
+      <div className="hx-art" aria-hidden="true">
+        <svg className="hx-arc" viewBox="0 0 200 600" data-hx="arc"><path d="M10 10 A 300 300 0 0 1 10 590" /></svg>
+        <img className="hx-img" src={hero.image} alt="" data-hx="img" />
+        <svg className="hx-star" viewBox="0 0 24 24" data-hx="fade"><path d="M12 0 C13 8 16 11 24 12 C16 13 13 16 12 24 C11 16 8 13 0 12 C8 11 11 8 12 0Z" /></svg>
       </div>
-      <div className="mid">
-        <a className="reel mag" href={hero.primary.href} aria-label={hero.reel}>
-          <svg viewBox="0 0 120 120" aria-hidden="true">
-            <defs><path id="rc" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" /></defs>
-            <text><textPath href="#rc" textLength="289" lengthAdjust="spacing">{ring}</textPath></text>
-          </svg>
-          <span>▶</span>
-        </a>
-        <h1 className="name" aria-label={name}>
-          {[...name].map((c, i) => <span key={i} style={{ '--i': i } as CSSProperties}>{c}</span>)}
+
+      <div className="hx-copy">
+        <p className="hx-eye" data-hx="fade">{hero.eyebrow}</p>
+        <h1 className="hx-h" aria-label={hero.lines.join(' ')}>
+          {hero.lines.map((l) => (
+            <span className="ln" key={l} aria-hidden="true"><span className="ln-i" data-hx="line">{l}</span></span>
+          ))}
         </h1>
-        <p className="role">
-          {role}
-          <small>{tagline}</small>
+        <p className="hx-p" aria-label={hero.text}>
+          {hero.text.split(' ').map((w, i) => (
+            <span className="w" key={i} aria-hidden="true"><span data-hx="word">{w}</span>{' '}</span>
+          ))}
         </p>
-      </div>
-      <div className="hero-foot">
-        <div>
-          <a className="btn mag" href={hero.primary.href}>{hero.primary.label}</a>{' '}
-          <a className="btn ghost mag" href={hero.secondary.href}>{hero.secondary.label}</a>
+        <div className="hx-cta" data-hx="fade">
+          <a className="hx-btn mag" href={hero.primary.href}>{hero.primary.label} <span aria-hidden="true">↗</span></a>
+          <a className="hx-link" href={hero.secondary.href}>{hero.secondary.label} <i aria-hidden="true">↓</i></a>
         </div>
-        <span className="cue">{hero.cue}</span>
       </div>
+
+      <div className="hx-side" data-hx="fade">
+        <small>{hero.side.top}</small>
+        <strong>{hero.side.big}</strong>
+        <a href={hero.side.link.href}>{hero.side.link.label} ↗</a>
+      </div>
+      <HeroMotion />
     </header>
   );
 }

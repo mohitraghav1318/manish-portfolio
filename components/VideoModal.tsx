@@ -37,7 +37,7 @@ export default function VideoModal({ item, onClose }: { item: WorkItem; onClose:
             <p>{item.video ? 'This video could not be loaded.' : 'The video for this project is coming soon.'}</p>
           </div>
         )}
-        <div className="mo-cap"><strong>{item.title}</strong><span>{item.label}</span></div>
+        <div className="mo-cap"><strong>{item.title}</strong></div>
       </div>
     </div>
   );
