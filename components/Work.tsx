@@ -1,6 +1,6 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { CSSProperties, KeyboardEvent, MouseEvent } from 'react';
+import type { CSSProperties, KeyboardEvent, PointerEvent } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { site } from '@/data/site';
@@ -10,7 +10,7 @@ import VideoModal from './VideoModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const thumbOf = (e: MouseEvent<HTMLElement>) => e.currentTarget.querySelector<HTMLElement>('.thumb')!;
+const thumbOf = (e: PointerEvent<HTMLElement>) => e.currentTarget.querySelector<HTMLElement>('.thumb')!;
 
 export default function Work() {
   const { title, items } = site.work;
@@ -62,7 +62,8 @@ export default function Work() {
     mm.add('(max-width: 900px) and (prefers-reduced-motion: no-preference)', () => {
       gsap.from(t.querySelectorAll('.card'), {
         x: 60, autoAlpha: 0, duration: 0.9, ease: 'power3.out', stagger: 0.08,
-        scrollTrigger: { trigger: t, start: 'top 85%' },
+        clearProps: 'transform,opacity,visibility',
+        scrollTrigger: { trigger: t, start: 'top 95%', once: true },
       });
     });
 
@@ -82,12 +83,13 @@ export default function Work() {
     }
   };
 
-  const tilt = (e: MouseEvent<HTMLElement>) => {
+  const tilt = (e: PointerEvent<HTMLElement>) => {
+    if (e.pointerType !== 'mouse') return;
     const r = e.currentTarget.getBoundingClientRect(), t = thumbOf(e);
     t.style.setProperty('--ry', ((e.clientX - r.left) / r.width - 0.5) * 10 + 'deg');
     t.style.setProperty('--rx', (0.5 - (e.clientY - r.top) / r.height) * 8 + 'deg');
   };
-  const reset = (e: MouseEvent<HTMLElement>) => {
+  const reset = (e: PointerEvent<HTMLElement>) => {
     const t = thumbOf(e);
     t.style.removeProperty('--rx'); t.style.removeProperty('--ry');
   };
@@ -115,17 +117,13 @@ export default function Work() {
               className="card"
               onClick={() => setOpen(w)}
               onKeyDown={(e: KeyboardEvent) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(w); } }}
-              onMouseMove={tilt}
-              onMouseLeave={reset}
+              onPointerMove={tilt}
+              onPointerLeave={reset}
             >
               <div className="thumb" style={{ '--a': w.colors[0], '--b': w.colors[1], aspectRatio: w.ratio ?? '16/9' } as CSSProperties}>
                 {poster ? <img className="tv" src={poster} alt="" loading="lazy" />
                   : m.kind === 'file' ? <video className="tv" src={`${m.src}#t=0.5`} muted playsInline preload="metadata" /> : null}
                 <span className="play">▶</span>
-              </div>
-              <div className="info">
-                <h3>{w.title}</h3>
-                {w.year && <span>{w.year}</span>}
               </div>
             </article>
           );

@@ -7,7 +7,6 @@ export type WorkItem = {
   title: string;
   category: string;          // must match a key in work.categories
   label: string;             // small tag on the card
-  year?: string;
   video?: string;            // YouTube / Vimeo link, or a file such as /videos/film.mp4 (put files in /public/videos)
   poster?: string;           // optional thumbnail, e.g. /images/film.jpg (YouTube thumbnails are automatic)
   ratio?: string;            // "16/9" (default) or "9/16" for vertical reels
